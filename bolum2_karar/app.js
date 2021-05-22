@@ -75,17 +75,49 @@
 //   console.log(`${i} Mehmet`);
 // }
 // --------------------------------------------------
-// SORU : Asal sayi tespiti
-const num = Number(prompt("Sayiyi giriniz"));
-let asal = true;
-for (let i = 2; i < num; i++) {
-  if (num % i == 0) {
-    asal = false;
+// * SORU : Asal sayi tespiti
+// const num = Number(prompt("Sayiyi giriniz"));
+// let asal = true;
+// for (let i = 2; i < num; i++) {
+//   if (num % i == 0) {
+//     asal = false;
+//     break;
+//   }
+// }
+
+// const result = asal ? "Asal" : "Asal Degil";
+
+// console.log(result);
+// // ------------------------------------------------
+
+// * SORU : 0 ile 100 arasinda sayi girildiginde mesaj veren bir program yaziniz?
+
+// ? do while ile
+// let not;
+// do {
+//   not = prompt("0-100 arasında bir not giriniz:");
+// } while (not < 0 || not > 100);
+
+// console.log("Giridiğiniz not 0-100 arasındadır");
+
+// ? while ile
+// let not = prompt("0-100 arasında bir not giriniz:");
+// while(not<0 || not>100){
+//   console.error("Girilen not 0-100 arasinda olmalidir.");
+//   not = prompt("0-100 arasinda bir not giriniz:");
+// }
+// console.log("Girdiginiz sayi 0-100 arasindadir");
+
+// * SORU : Klavyeden Q karakteri girilene kadar not girisi yapan bir programi dongu kullanarak yaziniz?
+
+let not1,
+  i = 1;
+while (true) {
+  not1 = prompt(i + ".kisinin notunu giriniz:");
+  not1 = not1.toLowerCase();
+  if (not1 == "q") {
     break;
   }
+  i++;
+  console.log(Number(not1));
 }
-
-const result = asal ? "Asal" : "Asal Degil";
-
-console.log(result);
-// ------------------------------------------------
