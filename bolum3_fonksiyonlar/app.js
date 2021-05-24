@@ -78,7 +78,7 @@ const menu = () => {
 };
 menu();
 
-// * SORU :
+// * SORU : Ad, Soyad ve yasi donduren fonksiyon
 
 // 1.Yol
 // const bilgiVer = (ad, soyad, dogumTarihi) => {
@@ -91,3 +91,15 @@ const bilgiVer = (ad, soyad, dogumTarihi) =>
   `Adim:${ad}, Soyadim:${soyad}, Yasim:${2021 - dogumTarihi}`;
 
 console.log(bilgiVer("Mehmet", "Cakmak", 1987));
+
+// * SORU : Bir silindirin hacmini hesaplayan fonksiyonu ARROW fonksiyon olarak yaziniz. Yaricap prompt ile girilmeli..(pi*r2*h)
+
+const r = prompt("Yaricapi giriniz");
+const h = prompt("Yukseklik giriniz");
+
+const hacimHesapla = (r, h) => Math.PI * r * r * h;
+console.log(hacimHesapla(r, h));
+// Math.round() --> En yakin sayiya yuvarlar
+console.log("silindirin hacmi: " + Math.round(hacimHesapla(r, h)));
+// toFixed(2) --> virgulden sonra 2 basamak alir. Farkli sayi girilebilir.
+console.log("silindirin hacmi: " + hacimHesapla(r, h).toFixed(2));

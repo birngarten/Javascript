@@ -1,17 +1,13 @@
-console.error("Dikkat!");
-console.warn("Uyari");
+function namel(a, b) {
+  return console.log(a * b);
+}
 
-const dogumTarihi = 1977;
-const tarih = 2021;
+namel(2, 3);
 
-const yas = tarih - dogumTarihi;
-console.log(`Ahmet ${yas} yasindadir`);
+const carp = function name(c, d) {
+  return console.log(c * d);
+};
+carp(3, 5);
 
-const pi = 3.14;
-const r = 4;
-const pi_r = pi * r ** 3;
-const cevre = 2 * pi * r;
-console.log(pi_r);
-console.log(`cevresi ${cevre} metredir`);
-
-const a = 12;
+const carpma = (e, f) => e * f;
+console.log(carpma(4, 6));
