@@ -43,9 +43,7 @@ const h1 = document.createElement("h1");
 const yazi = document.createTextNode("Programlama Dilleri");
 h1.appendChild(yazi);
 sonDiv.after(h1); // ? index.html'deki input-div'in sonrasina h1'i ekliyoruz
-h1.style.marginTop = "20px";
-h1.style.color = "red";
-h1.style.textAlign = "left";
+h1.className = "yeni-h1";
 
 // Ekleme
 document.querySelector(".ekle").onclick = function () {
