@@ -43,9 +43,9 @@ const h1 = document.createElement("h1");
 const yazi = document.createTextNode("Programlama Dilleri");
 h1.appendChild(yazi);
 sonDiv.after(h1); // ? index.html'deki input-div'in sonrasina h1'i ekliyoruz
-h1.className = "yeni-h1";
-
-// Ekleme
+h1.className = "yeni-h1"; // * Olusturdugumuz h1 elemanina bir class adi atadik.
+// * Bu h1 elemanina css file'da style verdik
+// *** EKLEME
 document.querySelector(".ekle").onclick = function () {
   // ekleme yapilacak listeyi al
   const liste = document.querySelector(".liste");
@@ -61,7 +61,7 @@ document.querySelector(".ekle").onclick = function () {
   liste.appendChild(yeniLi);
 };
 
-// Silme
+// *** SILME
 document.querySelector(".sil").onclick = function () {
   const liste = document.querySelector(".liste");
   // liste.removeChild(liste.firstElementChild); // ilk elemani siler
