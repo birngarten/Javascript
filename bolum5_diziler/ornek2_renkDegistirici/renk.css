@@ -1,6 +1,6 @@
 .container {
-  width: 100vw; /* viewport with*/
-  min-height: 100vh; /*viewportr height */
+  width: 100vw; /* viewport with: genislik olarak alanin %100'unu kaplar*/
+  min-height: 100vh; /*viewport height: yukseklik  olarak alanin %100'unu kaplar */
   display: flex;
   justify-content: center;
   align-items: center;
