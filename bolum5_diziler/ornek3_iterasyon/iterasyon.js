@@ -113,9 +113,35 @@ const dolar = document.querySelector(".dolar-fiyat");
 const euro = document.querySelector(".euro-fiyat");
 
 dolarKur.onchange = function () {
-  dolar.innerHTML = tlFiyatlar.map((tl) => Math.round(tl / dolarKur.value));
+  dolarKur.value < 0
+    ? alert("Kur 0'dan kucuk olamaz")
+    : (dolar.innerHTML = tlFiyatlar.map((tl) =>
+        Math.round(tl / dolarKur.value)
+      ));
 };
 
 euroKur.onchange = function () {
-  euro.innerHTML = tlFiyatlar.map((tl) => Math.round(tl / euroKur.value));
+  euroKur.value < 0
+    ? alert("Kur 0'dan kucuk olamaz")
+    : (euro.innerHTML = tlFiyatlar.map((tl) => Math.round(tl / euroKur.value)));
 };
+
+//------------------------------------------------------------
+// SORU : tlFiyatlar dizisinin elemanlarindan fiyati 250 altinda olanlara %10 zam, ustunde olanlara %20 zam yapalim
+// ornek: 1. urunun zamli fiyati 110 TL
+//! tlFiyatlar = [120, 340, 550, 245, 322.5, 789];
+const zamliTlFiyatlar = tlFiyatlar.map((deger, indis) => {
+  if (deger < 250) {
+    return `${indis + 1}. urunun zamli fiyati: ${deger * 1.1}`;
+  } else {
+    return `${indis + 1}. urunun zamli fiyati: ${deger * 1.2}`;
+  }
+});
+document.querySelector(".zamli-fiyat").innerHTML = zamliTlFiyatlar;
+console.log(zamliTlFiyatlar);
+
+// tlFiyatlar listesinde fiyati 250 den az olanlari ayri bir diziye saklayalim
+const kucuk250 = tlFiyatlar.filter((d) => d < 250);
+console.log(kucuk250);
+// 350'den kucuk
+tlFiyatlar.filter((d) => d < 350).forEach((x) => console.log(x));
