@@ -1,6 +1,6 @@
-// ======================================================
-//            DİZİLERDE İTERASYON
-// ======================================================
+// ==============================================================
+//?                    DİZİLERDE İTERASYON
+//===============================================================
 const koordinatlar = [120, 100, -100, 220, 330];
 let negatif = 0;
 let pozitif = 0;
@@ -37,7 +37,9 @@ sayi == 0
   ? console.log("Aradiginiz hayvan bulunamadi")
   : console.log(`Aradiginiz ${ara} 'den ${sayi} adet bulunmaktadir`);
 
-//  =========   FOR OF DONGUSU ===========
+// ==============================================================
+//?                    FOR OF DONGUSU
+//===============================================================
 // for of dongusu for in dongusunun bir cok veri yapisini kapsayacak sekilde guncellenmis halidir. Bu dongude dizi icersindeki veriye erisirken indisleme kullanmaya gerek yoktur.
 let arabalar = ["BMW", "Volvo", "Mini"];
 let yazı = "";
@@ -47,7 +49,9 @@ for (let i of arabalar) {
 }
 console.log(yazı);
 
-// ============== FOREACH METHODU ==============================
+// ==============================================================
+//?                    FOREACH METHODU
+//===============================================================
 let ogrenciler = ["Jhon", "Ali", "Can"];
 ogrenciler.forEach((x) => console.log(x)); // 1.Yontem =>
 
@@ -87,8 +91,8 @@ fiyatlar.forEach((deger, indis) => {
 console.log(zamliFiyatlar);
 console.log(toplamFiyat);
 //-------------------------------------------------------------
-
-// ============== MAP METHODU ==============================
+//?                   MAP METHODU
+// ============================= ==============================
 // SORU : Dizinin herbir elemaninin iki katini aliniz
 const rakamlar = [3, 5, 3, 2, 6, 7, 9];
 const ikiKat = rakamlar.map((x) => x * 2);
@@ -132,16 +136,56 @@ euroKur.onchange = function () {
 //! tlFiyatlar = [120, 340, 550, 245, 322.5, 789];
 const zamliTlFiyatlar = tlFiyatlar.map((deger, indis) => {
   if (deger < 250) {
-    return `${indis + 1}. urunun zamli fiyati: ${deger * 1.1}`;
+    return `${indis + 1}. urunun zamli fiyati: ${deger * 1.1} <br> `;
   } else {
-    return `${indis + 1}. urunun zamli fiyati: ${deger * 1.2}`;
+    return `${indis + 1}. urunun zamli fiyati: ${deger * 1.2} <br> `;
   }
 });
-document.querySelector(".zamli-fiyat").innerHTML = zamliTlFiyatlar;
+const stringZamliTlFiyatlar = zamliTlFiyatlar.join(""); // UI'daki virgullerden kurtulmak icin su code'u yazdik
+document.querySelector(".zamli-fiyat").innerHTML = stringZamliTlFiyatlar;
 console.log(zamliTlFiyatlar);
 
+//=================================================================
+//?                   FILTER METHOD'U
+//=================================================================
 // tlFiyatlar listesinde fiyati 250 den az olanlari ayri bir diziye saklayalim
 const kucuk250 = tlFiyatlar.filter((d) => d < 250);
 console.log(kucuk250);
 // 350'den kucuk
 tlFiyatlar.filter((d) => d < 350).forEach((x) => console.log(x));
+// kucukten buyuge siralama
+//* sort();
+console.log(tlFiyatlar.sort((a, b) => a - b));
+//  buyukten kucuge siralama
+console.log(tlFiyatlar.sort((a, b) => b - a));
+
+// =================================================================
+//?                     PIPELINE
+// =================================================================
+//* SORU : maasi 4000 $'dan dusuk olanlara %30 zam yapalim ve ayri dizide saklayalim
+const maaslar = [3000, 5000, 4000, 6000, 6500];
+const zamliMaaslar = maaslar
+  .filter((m) => m <= 4000)
+  .map((m) => (m * 1.3).toFixed(2));
+console.log(zamliMaaslar);
+
+//* SORU : 4000'den fazla olanlara % 25 zam yap
+maaslar
+  .filter((d) => d > 4000)
+  .map((d) => d * 1.25)
+  .forEach((d) => console.log(d));
+
+//----------------------------------------------------------------
+//* SORU :
+const adlar = [
+  "Samet",
+  "Hakki",
+  "Duygu",
+  "Emrullah",
+  "Bilal",
+  "Ali",
+  "Ahmet",
+  "Hasan",
+  "Defne",
+  "Serdar",
+];
