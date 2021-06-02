@@ -1,4 +1,5 @@
 import yorumlar from "./data.js";
+//
 // Bilgilere erişelim
 const foto = document.getElementById("kisi-resim");
 const yazar = document.getElementById("yazar");
@@ -9,7 +10,7 @@ const ileriBtn = document.querySelector(".ileri-btn");
 const geriBtn = document.querySelector(".geri-btn");
 const rasgeleBtn = document.querySelector(".rasgele-btn");
 let index = 0;
-const kisiyiGoster = function (index) {
+const kisiyiGoster = function () {
   const kisi = yorumlar[index];
   const { resim, ad, meslek, yorum } = kisi; // Destructring
   foto.src = resim;
